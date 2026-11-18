@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الفقعاوي موبايل | اطلب باقتك أو رقمك المميز</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf7f5;--surface:#fff;--text:#1a1a1a;--muted:#5f5753;--line:#eadcd8;--accent:#d50000;--on-accent:#fff;--soft:#fdeceb;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141211;--surface:#1f1c1b;--text:#f4efed;--muted:#b9afab;--line:#3a3331;--accent:#e53935;--soft:#2c1a19;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141211;--surface:#1f1c1b;--text:#f4efed;--muted:#b9afab;--line:#3a3331;--accent:#e53935;--soft:#2c1a19;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Cairo',system-ui,sans-serif;line-height:1.6}
+header{background:var(--accent);color:var(--on-accent);padding:28px 20px 22px}
+header .sub{font-size:14px;font-weight:600;opacity:.95}
+header h1{margin:0;font-size:34px;font-weight:800;line-height:1.2}
+header p{margin:6px 0 0;font-size:15px}
+nav{display:flex;gap:8px;padding:12px 16px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;border-bottom:1px solid var(--line);overflow-x:auto}
+nav button{flex:1;min-width:max-content;min-height:44px;padding:8px 16px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;font:600 15px 'Cairo',sans-serif;cursor:pointer}
+nav button[aria-selected="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+main{padding:18px 16px 110px;max-width:720px;margin:0 auto}
+h2{margin:0 0 4px;font-size:22px;font-weight:800}
+.hint{margin:0 0 16px;color:var(--muted);font-size:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px;display:flex;align-items:center;gap:12px;justify-content:space-between}
+.card h3{margin:0;font-size:18px;font-weight:800}
+.card p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.num{font-size:22px;font-weight:800;letter-spacing:1px;direction:ltr;unicode-bidi:isolate}
+.btn{min-height:44px;padding:8px 18px;border:0;border-radius:12px;background:var(--accent);color:var(--on-accent);font:700 15px 'Cairo',sans-serif;cursor:pointer;white-space:nowrap}
+label{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}
+input,select{width:100%;min-height:46px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--text);font:400 16px 'Cairo',sans-serif}
+input[dir="ltr"]{text-align:right}
+.row{display:flex;gap:8px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 16px 18px}
+.panel .btn{width:100%;margin-top:16px}
+.note{background:var(--soft);border-radius:12px;padding:10px 14px;font-size:13px;color:var(--muted);margin-top:14px}
+.empty{text-align:center;color:var(--muted);padding:24px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.amt{min-height:76px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:14px;font:800 26px 'Cairo',sans-serif;cursor:pointer;line-height:1.2}
+.amt small{display:block;font-size:12px;font-weight:600;color:var(--muted)}
+.sec{margin:20px 0 10px;font-size:18px;font-weight:800;color:var(--accent)}
+#sheet{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;z-index:20}
+#sheet.open{display:flex}
+#sheet .box{background:var(--surface);width:100%;max-width:720px;margin:0 auto;border-radius:20px 20px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+#sheet h3{margin:0 0 4px;font-size:20px;font-weight:800}
+.link{background:none;border:0;color:var(--muted);font:600 14px 'Cairo',sans-serif;min-height:44px;width:100%;cursor:pointer}
+footer{padding:20px 16px 40px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+<header>
+<div class="sub">نقطة مبيعات معتمدة لشركة Ooredoo</div>
+<h1>الفقعاوي موبايل</h1>
+<p>اختر طلبك وأرسله لنا على واتساب، ونكمل لك الباقي.</p>
+</header>
+<nav role="tablist" aria-label="الأقسام">
+<button role="tab" aria-selected="true" data-tab="top">شحن رصيد</button>
+<button role="tab" aria-selected="false" data-tab="pk">الحزم</button>
+<button role="tab" aria-selected="false" data-tab="sp">فواتير سوبر بلس</button>
+<button role="tab" aria-selected="false" data-tab="vip">الأرقام المميزة</button>
+<button role="tab" aria-selected="false" data-tab="bill">دفع فاتورة</button>
+</nav>
+<main>
+<section id="top">
+<h2>شحن رصيد</h2>
+<p class="hint">اختر قيمة الشحن، ثم اكتب الرقم المراد شحنه.</p>
+<div class="grid" id="topList"></div>
+</section>
+<section id="pk" hidden>
+<h2>الحزم الشهرية والأسبوعية</h2>
+<p class="hint">اختر الحزمة واضغط «فعّل».</p>
+<div class="sec">حزم الإنترنت</div>
+<div id="netList"></div>
+<div class="sec">حزم الدقائق</div>
+<div id="minList"></div>
+<div class="sec">حزم الرسائل</div>
+<div id="msgList"></div>
+</section>
+<section id="sp" hidden>
+<h2>برنامج فواتير سوبر بلس</h2>
+<p class="hint">الأسعار شاملة الضريبة.</p>
+<div id="spList"></div>
+</section>
+<section id="vip" hidden>
+<h2>الأرقام المميزة</h2>
+<p class="hint">ابحث عن رقمك بأي أرقام تحبها.</p>
+<label for="q">ابحث بالأرقام</label>
+<input id="q" inputmode="numeric" dir="ltr" placeholder="مثال: 777 أو 2020" autocomplete="off">
+<div class="row" style="margin:10px 0 14px">
+<select id="mode" aria-label="نوع البحث"><option value="has">يحتوي على</option><option value="end">ينتهي بـ</option><option value="start">يبدأ بـ</option></select>
+<select id="kind" aria-label="النوع"><option value="all">كل الأرقام</option><option value="vip">تصنيف ذهبي</option><option value="reg">عادية</option></select>
+</div>
+<div id="vipList"></div>
+<div class="note">لم تجد رقمك؟ اكتب الرقم الذي تريده ونبحث لك عنه.<br><button class="btn" id="ask" style="margin-top:10px;width:100%">اسأل عن رقم معيّن</button></div>
+</section>
+<section id="bill" hidden>
+<h2>دفع فاتورة</h2>
+<p class="hint">أدخل رقم الخط والمبلغ، وسنؤكد لك الدفع على واتساب.</p>
+<div class="panel">
+<label for="bn">رقم الخط</label>
+<input id="bn" inputmode="numeric" dir="ltr" placeholder="059xxxxxxx">
+<label for="ba">المبلغ المراد دفعه (اختياري)</label>
+<input id="ba" inputmode="decimal" dir="ltr" placeholder="مثال: 50">
+<button class="btn" id="bsend">أرسل طلب الدفع</button>
+</div>
+<div class="note">يتم تأكيد الدفع معك مباشرة، ولا يُطلب منك أي رمز تحقق أو كلمة سر.</div>
+</section>
+</main>
+<footer>
+خانيونس - شارع البحر - بجوار المكتبة العامة<br>يومياً من 9 صباحاً حتى 10 مساءً<br><span dir="ltr">0567388354 | 0567043330</span>
+</footer>
+<div id="sheet" role="dialog" aria-modal="true" aria-labelledby="st">
+<div class="box">
+<h3 id="st"></h3>
+<p class="hint" id="ss"></p>
+<label for="nm">اسمك</label>
+<input id="nm" autocomplete="name">
+<label for="ph">رقم الجوال</label>
+<input id="ph" inputmode="tel" dir="ltr" autocomplete="tel" placeholder="059xxxxxxx">
+<button class="btn" id="go" style="width:100%;margin-top:16px">أرسل عبر واتساب</button>
+<button class="link" id="cancel">إلغاء</button>
+</div>
+</div>
+<script>
+/* عدّل هذه القوائم: السعر null يظهر «اسأل عن السعر» */
+var WA = '972567043330';
+var CAT = {
+  top:[10,20,25,50,100,200,300,400,500],
+  net:[
+    {n:'150 ميجا', d:'أسبوعية', p:3},
+    {n:'400 ميجا', d:'شهرية', p:5},
+    {n:'1 جيجا', d:'شهرية', p:10},
+    {n:'1.5 جيجا', d:'شهرية', p:15},
+    {n:'2.5 جيجا', d:'شهرية', p:20}
+  ],
+  min:[
+    {n:'35 دقيقة + 35 رسالة + 25 ميجا', p:5},
+    {n:'105 دقيقة + 105 رسالة + 250 ميجا', p:13},
+    {n:'120 دقيقة + 120 رسالة + 300 ميجا', p:14},
+    {n:'155 دقيقة + 155 رسالة + 0.5 جيجا', p:17},
+    {n:'375 دقيقة + 375 رسالة + 1 جيجا', p:37},
+    {n:'750 دقيقة + 750 رسالة + 1.5 جيجا', p:50}
+  ],
+  msg:[
+    {n:'550 رسالة', p:5},
+    {n:'1500 رسالة', p:13}
+  ],
+  sp:[
+    {n:'سوبر بلس 70', d:'1375 دقيقة + 1375 رسالة + 3 جيجا + 50 دقيقة تجوال محلي', p:70, tax:1},
+    {n:'سوبر بلس 105', d:'1875 دقيقة + 1875 رسالة + 3.75 جيجا + 100 دقيقة تجوال محلي + تخصيص رقم أوريدو لا محدود', p:105, tax:1},
+    {n:'سوبر بلس 145', d:'2750 دقيقة + 2750 رسالة + 5 جيجا + 150 دقيقة تجوال محلي', p:145, tax:1}
+  ]
+};
+var VIP = [
+  {n:'0567154443', s:'0567154443', t:'vip', p:150},
+  {n:'0567244405', s:'0567244405', t:'vip', p:150},
+  {n:'0567255506', s:'0567255506', t:'vip', p:150},
+  {n:'0567266605', s:'0567266605', t:'vip', p:150},
+  {n:'0567060166', s:'0567060166', t:'vip', p:50},
+  {n:'0567060161', s:'0567060161', t:'vip', p:50},
+  {n:'0568906100', s:'0568906100', t:'reg', p:null},
+  {n:'0568080735', s:'0568080735', t:'reg', p:null},
+  {n:'0567409100', s:'0567409100', t:'reg', p:null},
+  {n:'0566060816', s:'0566060816', t:'reg', p:null},
+  {n:'0566060797', s:'0566060797', t:'reg', p:null},
+  {n:'0567060172', s:'0567060172', t:'reg', p:null},
+  {n:'0567060158', s:'0567060158', t:'reg', p:null},
+  {n:'0567218100', s:'0567218100', t:'reg', p:null},
+  {n:'0567024100', s:'0567024100', t:'reg', p:null},
+  {n:'0568080736', s:'0568080736', t:'reg', p:null}
+];
+var $ = function(id){return document.getElementById(id)};
+var pending = null;
+
+function priceText(p){ return p ? p + ' شيكل' : 'السعر عند التواصل'; }
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}); }
+
+function card(k,x,i,btn){
+  return '<div class="card"><div><h3>'+esc(x.n)+'</h3>'+(x.d?'<p>'+esc(x.d)+'</p>':'')+'<p><b>'+x.p+' شيكل</b>'+(x.tax?' شامل الضريبة':'')+'</p></div><button class="btn" data-c="'+k+'" data-i="'+i+'">'+btn+'</button></div>';
+}
+function renderPk(){
+  $('topList').innerHTML = CAT.top.map(function(a,i){return '<button class="amt" data-c="top" data-i="'+i+'">'+a+'<small>شيكل</small></button>';}).join('');
+  $('netList').innerHTML = CAT.net.map(function(x,i){return card('net',x,i,'فعّل');}).join('');
+  $('minList').innerHTML = CAT.min.map(function(x,i){return card('min',x,i,'فعّل');}).join('');
+  $('msgList').innerHTML = CAT.msg.map(function(x,i){return card('msg',x,i,'فعّل');}).join('');
+  $('spList').innerHTML = CAT.sp.map(function(x,i){return card('sp',x,i,'اشترك');}).join('');
+}
+function renderVip(){
+  var q = $('q').value.replace(/\D/g,''), m = $('mode').value;
+  var kd = $('kind').value;
+  var list = VIP.filter(function(x){
+    if(kd!=='all' && x.t!==kd) return false;
+    if(!q) return true;
+    return m==='end' ? x.n.endsWith(q) : m==='start' ? x.n.startsWith(q) : x.n.indexOf(q)>-1;
+  });
+  $('vipList').innerHTML = list.length ? list.map(function(x){
+    return '<div class="card"><div><div class="num">'+x.s+'</div><p>'+(x.t==='vip'?'ذهبي · ':'')+priceText(x.p)+'</p></div><button class="btn" data-vip="'+x.n+'">احجزه</button></div>';
+  }).join('') : '<div class="empty">لا توجد أرقام مطابقة، جرّب أرقاماً أخرى أو اسأل عن رقم معيّن.</div>';
+}
+
+function openSheet(title, sub, build){
+  send(build('',''));
+}
+function closeSheet(){ $('sheet').classList.remove('open'); }
+function send(text){
+  text = text.split('\n').filter(function(l){return !/:\s*$/.test(l);}).join('\n');
+  var u = 'https://wa.me/'+WA+'?text='+encodeURIComponent(text), w = null;
+  try{ w = window.open(u, '_blank'); }catch(e){}
+  if(!w){ try{ window.top.location.href = u; }catch(e){ window.location.href = u; } }
+}
+
+document.addEventListener('click', function(e){
+  var t = e.target.closest('button'); if(!t) return;
+  if(t.dataset.c){
+    var k = t.dataset.c, it = CAT[k][t.dataset.i], what, ttl;
+    if(k==='top'){ ttl='شحن رصيد '+it+' شيكل'; what='أرغب بشحن رصيد بقيمة '+it+' شيكل'; }
+    else if(k==='sp'){ ttl='اشتراك '+it.n; what='أرغب بالاشتراك في برنامج فواتير '+it.n+' ('+it.d+') بسعر '+it.p+' شيكل شامل الضريبة'; }
+    else { ttl='تفعيل حزمة'; what='أرغب بتفعيل حزمة: '+it.n+(it.d?' ('+it.d+')':'')+' بسعر '+it.p+' شيكل'; }
+    openSheet(ttl, 'اترك الاسم ورقم الجوال ونتواصل معك لإتمام الطلب.', function(n,ph){
+      return 'مرحباً، '+what+'.\nالاسم: '+n+'\nرقم الجوال: '+ph;
+    });
+  } else if(t.dataset.vip){
+    var v = t.dataset.vip;
+    openSheet('حجز الرقم '+v, 'سنتأكد من توفره ونتواصل معك.', function(n,ph){
+      return 'مرحباً، أرغب بحجز الرقم المميز '+v+'.\nالاسم: '+n+'\nجوالي: '+ph;
+    });
+  } else if(t.dataset.tab){
+    ['top','pk','sp','vip','bill'].forEach(function(id){ $(id).hidden = id!==t.dataset.tab; });
+    document.querySelectorAll('nav button').forEach(function(b){ b.setAttribute('aria-selected', b===t); });
+    window.scrollTo(0,0);
+  }
+});
+
+$('q').addEventListener('input', renderVip);
+$('mode').addEventListener('change', renderVip);
+$('kind').addEventListener('change', renderVip);
+$('ask').addEventListener('click', function(){
+  var q = $('q').value.replace(/\D/g,'');
+  openSheet('اسأل عن رقم معيّن', 'اكتب الرقم الذي تريده في خانة البحث ثم أرسل.', function(n,ph){
+    return 'مرحباً، أبحث عن رقم مميز'+(q?' يحتوي على '+q:'')+'.\nالاسم: '+n+'\nجوالي: '+ph;
+  });
+});
+$('bsend').addEventListener('click', function(){
+  var bn = $('bn').value.replace(/\D/g,''), ba = $('ba').value.trim();
+  if(bn.length < 9){ $('bn').focus(); return; }
+  send('مرحباً، أرغب بدفع فاتورة.\nرقم الخط: '+bn+(ba?'\nالمبلغ: '+ba+' شيكل':''));
+});
+$('go').addEventListener('click', function(){
+  var n = $('nm').value.trim(), ph = $('ph').value.trim();
+  if(!n){ $('nm').focus(); return; }
+  if(ph.replace(/\D/g,'').length < 9){ $('ph').focus(); return; }
+  send(pending(n, ph)); closeSheet();
+});
+$('cancel').addEventListener('click', closeSheet);
+$('sheet').addEventListener('click', function(e){ if(e.target===$('sheet')) closeSheet(); });
+renderPk(); renderVip();
+</script>
+</body>
+</html>
